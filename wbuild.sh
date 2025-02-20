@@ -3,7 +3,7 @@
 # Compiler options
 CC=em++
 CFLAGS="-std=c++17 -Os -Wall"
-EMFLAGS="-s USE_GLFW=3 --shell-file shell.html -DPLATFORM_WEB"
+EMFLAGS="-s USE_GLFW=3 --shell-file build/web/shell.html -DPLATFORM_WEB"
 
 # Paths
 INCLUDE_DIR="include/"
