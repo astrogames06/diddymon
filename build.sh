@@ -9,5 +9,5 @@ INCLUDE_DIR="include/"
 LIB_DIR="lib/"
 
 # Build command
-$CC main.cpp $LIB_DIR/libraylib.mac.a -o app $CFLAGS -I $INCLUDE_DIR -L $LIB_DIR -lraylib.mac -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo
-./app
+$CC src/main.cpp $LIB_DIR/libraylib.mac.a -o build/mac/app $CFLAGS -I $INCLUDE_DIR -L $LIB_DIR -lraylib.mac -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo
+./build/mac/app
