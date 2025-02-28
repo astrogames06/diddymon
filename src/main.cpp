@@ -13,15 +13,20 @@
     #include <emscripten/emscripten.h>
 #endif
 
+#include "Game/Game.hpp"
+#include "Player/Player.hpp"
 
-const int WIDTH = 850;
-const int HEIGHT = 450;
+Game game;
 
 void UpdateDrawFrame();
 
 int main(void)
 {
-	InitWindow(WIDTH, HEIGHT, "raylib [core] example - basic window");
+	InitWindow(game.WIDTH, game.HEIGHT, "raylib [core] example - basic window");
+	game.Init();
+
+	Player plr;
+	plr.Init();
 
 	#if defined(PLATFORM_WEB)
     	emscripten_set_main_loop(UpdateDrawFrame, 0, 1);
@@ -43,11 +48,12 @@ int main(void)
 
 void UpdateDrawFrame()
 {
+	game.Update();
 	BeginDrawing();
 	
 	ClearBackground(RAYWHITE);
 
-	DrawText("Yay you setup a raylib web game!", 100, 100, 20, BLACK);
+	game.Draw();
 
 	EndDrawing();
 }
