@@ -12,7 +12,8 @@ class Game
 public:
     int WIDTH;
     int HEIGHT;
-    std::vector<Entity> entities;
+    std::vector<std::reference_wrapper<Entity>> entities;
+    std::vector<Rectangle> obstacles;
 
     void Init();
     void Update();

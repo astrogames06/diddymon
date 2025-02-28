@@ -6,6 +6,7 @@
 class Entity
 {
 public:
+    Vector2 position;
     virtual ~Entity() = default;
 
     virtual void Init();

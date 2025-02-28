@@ -6,7 +6,9 @@
 class Player : public Entity
 {
 public:
-    Vector2 position;
+    Vector2 velocity;
+    const int PLAYER_SIZE = 50;
+    const float MOVE_SPEED = 200.0f;
 
     void Init() override;
     void Update() override;

@@ -23,4 +23,8 @@ void Game::Draw()
     {
         entity.Draw();
     }
+    for (const auto &rec : obstacles)
+    {
+        DrawRectangleRec(rec, GRAY);
+    }
 }

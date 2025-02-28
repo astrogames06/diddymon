@@ -26,7 +26,16 @@ int main(void)
 	game.Init();
 
 	Player plr;
+	plr.position = Vector2 { (float)game.WIDTH / 2, (float)game.HEIGHT / 2 };
 	plr.Init();
+
+	for (int i = 0; i < 25; i++)
+	{
+		game.obstacles.push_back({
+			(float)GetRandomValue(0, 800), (float)GetRandomValue(0, 800),
+			(float)GetRandomValue(30, 100), (float)GetRandomValue(30, 100)
+		});
+	}
 
 	#if defined(PLATFORM_WEB)
     	emscripten_set_main_loop(UpdateDrawFrame, 0, 1);
