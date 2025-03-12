@@ -6,6 +6,7 @@
 class Player : public Entity
 {
 public:
+    Texture2D texture;
     Vector2 velocity;
     const int PLAYER_SIZE = 50;
     const float MOVE_SPEED = 200.0f;
